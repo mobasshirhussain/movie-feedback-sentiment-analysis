@@ -11,17 +11,18 @@ from nltk.corpus import stopwords
 
 # ---------------- DOWNLOAD MODEL ----------------
 import os
+import joblib
 import gdown
 
+# Download clf.pkl from Google Drive
 clf_url = "https://drive.google.com/uc?id=111bVS1WgQGdpDWTIXoIC1lJjclY2bfMl"
-tfidf_url = "https://drive.google.com/uc?id=1BpBp4uf8MTGdOdpZPZGXQgIUNUCXnVdD"
 
 if not os.path.exists("clf.pkl"):
     gdown.download(clf_url, "clf.pkl", quiet=False)
 
-if not os.path.exists("tfidf.pkl"):
-    gdown.download(tfidf_url, "tfidf.pkl", quiet=False)
-
+# Load files
+clf = joblib.load("clf.pkl")
+tfidf = joblib.load("tfidf.pkl")
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
     page_title="MovieMood AI",
