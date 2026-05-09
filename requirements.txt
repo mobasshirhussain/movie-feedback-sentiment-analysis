@@ -4,5 +4,5 @@ numpy==1.26.4
 scikit-learn==1.5.1
 nltk==3.8.1
 joblib==1.4.2
-requests==2.31.0
-pillow==10.3.0
+requests
+pillow==10.2.0
