@@ -10,6 +10,7 @@ from nltk.stem.porter import PorterStemmer
 from nltk.corpus import stopwords
 
 # ---------------- DOWNLOAD MODEL ----------------
+import os
 import gdown
 
 clf_url = "https://drive.google.com/uc?id=111bVS1WgQGdpDWTIXoIC1lJjclY2bfMl"
