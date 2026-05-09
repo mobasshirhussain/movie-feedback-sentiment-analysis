@@ -15,7 +15,7 @@ import joblib
 import gdown
 
 # Download clf.pkl from Google Drive
-clf_url = "https://drive.google.com/uc?id=111bVS1WgQGdpDWTIXoIC1lJjclY2bfMl"
+clf_url = "https://drive.google.com/file/d/1BpBp4uf8MTGdOdpZPZGXQgIUNUCXnVdD/view?usp=sharing"
 
 if not os.path.exists("clf.pkl"):
     gdown.download(clf_url, "clf.pkl", quiet=False)
