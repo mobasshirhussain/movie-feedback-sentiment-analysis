@@ -1,122 +1,145 @@
 # 🎬 Movie Feedback Sentiment Analysis
 
-An **AI-powered Sentiment Analysis Web Application** built using **Natural Language Processing (NLP)** and a **Random Forest Classifier** to analyze and classify movie reviews as **Positive 😊 or Negative 😡**.
+An AI-powered **Movie Review Sentiment Analysis Web Application** developed using **Natural Language Processing (NLP)** and **Machine Learning** techniques.  
+The system classifies movie reviews as **Positive 😊** or **Negative 😡** using a trained **Random Forest Classifier** with **TF-IDF Vectorization**.
 
 ---
 
-## 🚀 Features
+# 🚀 Features
 
-* 🎯 Sentiment prediction using **Random Forest**
-* 🧠 NLP-based text preprocessing
-* 📂 Multiple input support:
+✅ Sentiment prediction using Machine Learning  
+✅ NLP-based text preprocessing pipeline  
+✅ Multiple input formats supported:
 
-  * Text input
-  * CSV file
-  * TXT file
-  * PDF file
-* 📊 Real-time analytics (Positive vs Negative %)
-* 📥 Download results as CSV
-* 💻 Clean and responsive UI using Streamlit
+- ✍️ Manual text input
+- 📄 TXT file upload
+- 📊 CSV file upload
+- 📕 PDF file upload
+
+✅ Real-time sentiment analytics dashboard  
+✅ Download prediction results as CSV  
+✅ Interactive and responsive UI using Streamlit  
 
 ---
 
-## 📊 Dataset
+# 📊 Dataset Information
 
 This project uses the **IMDB Movie Reviews Dataset** from Kaggle.
 
-* 📁 Dataset: IMDB Dataset of 50K Movie Reviews
-* 📦 Size: ~50,000 reviews
-* 🏷️ Labels:
+## 📁 Dataset Details
 
-  * Positive
-  * Negative
+- Dataset Name: IMDB Dataset of 50K Movie Reviews
+- Total Reviews: 50,000
+- Categories:
+  - Positive
+  - Negative
 
-### 📌 Description
+## 📌 Dataset Purpose
 
-The dataset contains real-world movie reviews labeled by sentiment polarity. It is widely used for NLP and sentiment analysis tasks.
-
----
-
-## 🧹 Data Preprocessing
-
-* Removal of HTML tags
-* Lowercasing text
-* Removing special characters
-* Tokenization
-* Stopword removal
-* Negation handling (*not, never, no*)
-* Stemming using Porter Stemmer
+The dataset contains real-world movie reviews labeled according to sentiment polarity and is commonly used for NLP and sentiment classification tasks.
 
 ---
 
-## 🧠 Model Details
+# 🧹 NLP Preprocessing Pipeline
 
-* 🤖 Algorithm: **Random Forest Classifier**
-* 🔢 Feature Extraction: **TF-IDF Vectorization**
+The following preprocessing techniques are applied before model training:
 
-### ✅ Why Random Forest?
-
-* Handles large text features efficiently
-* Reduces overfitting
-* Provides good accuracy on classification tasks
-
----
-
-## ⚙️ How It Works
-
-1. User enters text or uploads file
-2. Text is preprocessed using NLP techniques
-3. Converted into numerical vectors using TF-IDF
-4. Random Forest model predicts sentiment
-5. Results displayed with analytics dashboard
+- HTML tag removal
+- Lowercase text conversion
+- Special character removal
+- Tokenization
+- Stopword removal
+- Negation handling (`not`, `never`, `no`)
+- Stemming using Porter Stemmer
 
 ---
 
-## 📂 Project Structure
+# 🧠 Machine Learning Model
 
+## 🔹 Algorithm Used
+- Random Forest Classifier
+
+## 🔹 Feature Extraction
+- TF-IDF Vectorization
+
+## ✅ Why Random Forest?
+
+- Handles high-dimensional text data efficiently
+- Reduces overfitting
+- Provides strong classification performance
+- Works well with sparse TF-IDF vectors
+
+---
+
+# ⚙️ Workflow
+
+```text
+User Input → NLP Preprocessing → TF-IDF Vectorization →
+Random Forest Prediction → Sentiment Result & Analytics
 ```
+
+---
+
+# ☁️ Model File Handling
+
+Due to GitHub file size limitations, the trained model files (`clf.pkl` and `tfidf.pkl`) were not uploaded directly to the repository.
+
+Instead, the model files were stored on **Google Drive** and integrated inside `app.py`.  
+The application automatically accesses and loads these files during execution, allowing the Streamlit app to run successfully without exceeding GitHub storage limits.
+
+---
+
+# 📂 Project Structure
+
+```text
 Movie-Feedback-Sentiment-Analysis/
 │── app.py
-│── clf.pkl
-│── tfidf.pkl
 │── requirements.txt
 │── README.md
-│── IMDB Dataset.csv
 │── SentimentAnalysisWithNLTK.ipynb
+│── .gitignore
 ```
 
 ---
 
-## 🛠️ Tech Stack
+# 🛠️ Tech Stack
 
-* **Frontend & Backend:** Streamlit
-* **Language:** Python
-* **Libraries:**
+## 💻 Frontend & Backend
+- Streamlit
 
-  * pandas
-  * nltk
-  * scikit-learn
-  * PyPDF2
-  * pickle
+## 🐍 Programming Language
+- Python
+
+## 📚 Libraries Used
+- pandas
+- nltk
+- scikit-learn
+- PyPDF2
+- pickle
+- streamlit
 
 ---
 
-## ⚙️ Installation & Setup
+# ⚙️ Installation & Setup
 
-### 1️⃣ Clone Repository
+## 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/your-username/movie-feedback-sentiment-analysis.git
 cd movie-feedback-sentiment-analysis
 ```
 
-### 2️⃣ Install Dependencies
+---
+
+## 2️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Run Application
+---
+
+## 3️⃣ Run the Application
 
 ```bash
 streamlit run app.py
@@ -124,54 +147,76 @@ streamlit run app.py
 
 ---
 
-## 📊 Input Format
+# 📥 Input Formats
 
-### ✅ Text Input
+## ✅ Manual Text Input
+Enter one or multiple movie reviews manually.
 
-Enter multiple reviews (one per line)
+## ✅ CSV File Upload
+CSV file must contain a column named:
 
-### ✅ CSV File
-
-Must contain column:
-
-```
+```text
 review
 ```
 
----
+## ✅ TXT File Upload
+Plain text reviews supported.
 
-## 📈 Output
-
-* Sentiment classification (Positive / Negative)
-* Percentage analytics
-* Downloadable CSV results
+## ✅ PDF File Upload
+PDF reviews are automatically extracted and analyzed.
 
 ---
 
-## 🎯 Use Cases
+# 📈 Output
 
-* Movie review analysis
-* Product feedback analysis
-* Social media sentiment tracking
-* NLP learning projects
+The application provides:
 
----
+- Sentiment Prediction
+  - Positive 😊
+  - Negative 😡
 
-## 🔥 Future Improvements
+- Real-Time Analytics
+  - Positive Percentage
+  - Negative Percentage
 
-* Add Neutral sentiment
-* Use Deep Learning (LSTM / BERT)
-* Multi-language support
-* Cloud deployment
+- Downloadable CSV Results
 
 ---
 
-## 👨‍💻 Author
+# 🎯 Applications
 
-**Mobasshir Hussain**
+- Movie review analysis
+- Product feedback analysis
+- Customer opinion mining
+- Social media sentiment tracking
+- NLP learning projects
 
 ---
 
-## ⭐ Support
+# 🔥 Future Enhancements
 
-If you like this project, give it a ⭐ on GitHub!
+- Add Neutral sentiment classification
+- Deep Learning integration (LSTM / BERT)
+- Multi-language sentiment analysis
+- Cloud deployment support
+- User authentication system
+
+---
+
+# 👨‍💻 Author
+
+## Mobasshir Hussain
+
+AI & Machine Learning Enthusiast
+
+---
+
+# ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
+
+---
+
+# 📜 License
+
+This project is licensed under the MIT License.
