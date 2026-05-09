@@ -10,19 +10,16 @@ from nltk.stem.porter import PorterStemmer
 from nltk.corpus import stopwords
 
 # ---------------- DOWNLOAD MODEL ----------------
-def download_file(url, filename):
-    if not os.path.exists(filename):
-        r = requests.get(url)
-        with open(filename, "wb") as f:
-            f.write(r.content)
+import gdown
 
-# 🔥 Direct links (Google Drive)
-clf_url = "https://drive.google.com/uc?id=111bVS1WgQGdpDWTIXoIC1lJjclY2bfMl&export=download"
-tfidf_url = "https://drive.google.com/uc?id=1BpBp4uf8MTGdOdpZPZGXQgIUNUCXnVdD&export=download"
+clf_url = "https://drive.google.com/uc?id=111bVS1WgQGdpDWTIXoIC1lJjclY2bfMl"
+tfidf_url = "https://drive.google.com/uc?id=1BpBp4uf8MTGdOdpZPZGXQgIUNUCXnVdD"
 
-# Download model files if not present
-download_file(clf_url, "clf.pkl")
-download_file(tfidf_url, "tfidf.pkl")
+if not os.path.exists("clf.pkl"):
+    gdown.download(clf_url, "clf.pkl", quiet=False)
+
+if not os.path.exists("tfidf.pkl"):
+    gdown.download(tfidf_url, "tfidf.pkl", quiet=False)
 
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
