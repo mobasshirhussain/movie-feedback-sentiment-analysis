@@ -4,3 +4,6 @@ numpy>=2.2.0
 scikit-learn>=1.6.0
 joblib>=1.4.2
 pillow>=11.2.1
+nltk>=3.9
+PyPDF2>=3.0.1
+requests>=2.32.0
